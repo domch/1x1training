@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>1x1</title>
+
+
+    <style>
+
+        *{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+        }
+
+        main{
+            width: 300px;
+            margin: 200px auto;
+            background: #efefef;
+            padding: 30px;
+        }
+
+        input{
+            height: 30px;
+            width: 60px;
+        }
+
+        span{
+            font-family: Courier New, Courier, monospace;
+        }
+
+        section{
+            background: lightblue;
+            padding:5px;
+        }
+
+
+    </style>
+</head>
+<body>
+    
+
+
+    <main>
+        <button>starten</button>
+        <br><br>
+
+        Zeit: <time>03:00</time>
+
+        <br><br>
+
+        <span id="first"></span> x <span id="second"></span> = 
+        <input type="text" id="result"/>
+
+        <br><br>
+
+        <section>0 richtige Antwort von 100 </section>
+    </main>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
