@@ -41,32 +41,32 @@ $("button").on("click", function(){
 
 let keywords = ["halb", "viertel", "nach", "vor", "uhr"];
 let numbers = [
-    {text: "eins", value:"1"},
-    {text: "zwei", value:"2"},
-    {text: "drei", value:"3"},
-    {text: "vier", value:"4"},
-    {text: "fünf", value:"5"},
-    {text: "sechs", value:"6"},
-    {text: "sieben", value:"7"},
-    {text: "acht", value:"8"},
-    {text: "neun", value:"9"},
-    {text: "zehn", value:"10"},
-    {text: "elf", value:"11"},
-    {text: "zwölf", value:"12"},
-    {text: "dreizehn", value:"13"},
-    {text: "vierzehn", value:"14"},
-    {text: "fünfzehn", value:"15"},
-    {text: "sechszehn", value:"16"},
-    {text: "siebzehn", value:"17"},
-    {text: "achtzehn", value:"18"},
-    {text: "neunzehn", value:"19"},
-    {text: "zwanzig", value:"20"},
-    {text: "einundzwanzig", value:"21"},
-    {text: "zweiundzwanzig", value:"22"},
-    {text: "dreiundzwanzig", value:"23"},
+    {text: "eins", value:1},
+    {text: "zwei", value:2},
+    {text: "drei", value:3},
+    {text: "vier", value:4},
+    {text: "fünf", value:5},
+    {text: "sechs", value:6},
+    {text: "sieben", value:7},
+    {text: "acht", value:8},
+    {text: "neun", value:9},
+    {text: "zehn", value:10},
+    {text: "elf", value:11},
+    {text: "zwölf", value:12},
+    {text: "dreizehn", value:13},
+    {text: "vierzehn", value:14},
+    {text: "fünfzehn", value:15},
+    {text: "sechszehn", value:16},
+    {text: "siebzehn", value:17},
+    {text: "achtzehn", value:18},
+    {text: "neunzehn", value:19},
+    {text: "zwanzig", value:20},
+    {text: "einundzwanzig", value:21},
+    {text: "zweiundzwanzig", value:22},
+    {text: "dreiundzwanzig", value:23},
 
-    {text: "halb", value:"30", special: true},
-    {text: "viertel", value:"15", special: true},
+    {text: "halb", value:30, special: true},
+    {text: "viertel", value:15, special: true},
 ];
 
  /**
@@ -133,10 +133,19 @@ let numbers = [
   * @param {*girilen ve teyit edilmis deger} pValue 
   */
  function parseValue(pValue){
+     // acht uhr
     if(["nach", "vor", "halb", "viertel"].some(key => pValue.includes(key))==false){
-        let number = numbers.find(obj => obj.text == pValue.replace("uhr", "").trim());
+        let hour = pValue.replace("uhr", "").trim()
+        let number = numbers.find(obj => obj.text == hour);
 
         return `${number.value}:00`.padStart(5, "0");
+    }
+    // halb zehn
+    if(pValue.includes("halb")){
+        let hour = pValue.replace("halb", "").trim();
+        let number = numbers.find(obj => obj.text == hour);
+
+        return `${number.value-1}:30`.padStart(5, "0");
     }
 
     return "07:30";
