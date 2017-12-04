@@ -90,7 +90,7 @@ let numbers = [
 
 
  function getValue(){
-    return $("input").val();
+    return $("input").val().toLowerCase();
  }
 
  /**
@@ -133,7 +133,11 @@ let numbers = [
   * @param {*girilen ve teyit edilmis deger} pValue 
   */
  function parseValue(pValue){
+    if(["nach", "vor", "halb", "viertel"].some(key => pValue.includes(key))==false){
+        let number = numbers.find(obj => obj.text == pValue.replace("uhr", "").trim());
 
+        return `${number.value}:00`.padStart(5, "0");
+    }
 
     return "07:30";
  }
