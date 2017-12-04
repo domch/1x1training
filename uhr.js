@@ -124,6 +124,7 @@ let numbers = [
  }
 
  /**
+  * Parse rules
   * 4.1) "act uhr": Eger verilen input icinde "nach", "vor", "halb", "viertel" gecmiyorsa, o zaman bu deger icin "uhr" i cikartirim kalan deger tam bir saate denk gelmeli.
   * 4.2) "halb zehn": "halb" geciyorsa, halbi cikar ve bunu 30 dakika olarak yorumlama, geri kalani sayiya cevir ve bir eksilt
   * 4.3) "viertel vor sieben": "vor" girilen deger icinde geciyorsa, bu deger ikiye "vor" üzerinden ikiye parcalanir ve u iki sayi ayri ayri degerlendirilir. Parcalanan degerin ilk bölümü dakika olarak degerlendirilir ve 60dak dan cikarilir. Ikinci kisim ise sayiya cevrilir ve 1 eksiltilir
