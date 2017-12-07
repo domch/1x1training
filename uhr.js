@@ -35,6 +35,22 @@
 
 
 
+class Hour{
+    constructor(value){
+        this.value = value;
+        this.result = null;
+    }
+
+    validate(){
+
+    }
+
+    parse(){
+
+    }
+}
+
+
 $("button").on("click", function(){
     main();
 });
@@ -88,6 +104,23 @@ let numbers = [
  }
 
 
+/*
+ function main2(){
+    // degeri al
+    // degiskene ata
+    let value = getValue();
+    
+
+    let hour = new Hour(value);
+    // degeri validate et
+    let validation = hour.validate();
+    // degeri yorumla
+    let result = hour.parse();
+    
+    // bulunan degeri outputa yazdir
+    showResult(hour.result);
+ }
+*/
 
  function getValue(){
     return $("input").val().toLowerCase();
